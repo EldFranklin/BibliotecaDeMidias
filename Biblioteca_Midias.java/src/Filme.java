@@ -1,5 +1,5 @@
 public class Filme extends Midia implements Controle {
-    private String diretor;
+    public String diretor;
     private boolean isPlaying = false;
     private boolean isPaused = false;
 

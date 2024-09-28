@@ -1,5 +1,5 @@
 public class Musica extends Midia implements Controle {
-    private String artista;
+    public String artista;
     private boolean isPlaying = false;
     private boolean isPaused = false;
 
