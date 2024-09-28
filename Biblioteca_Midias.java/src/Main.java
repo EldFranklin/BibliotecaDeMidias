@@ -81,7 +81,7 @@ public class Main {
 
                             break;
 
-                        case "música":
+                        case "musica":
                             System.out.print("Digite o artista: ");
                             autorDiretorArtista = scanner.nextLine();
                             biblioteca.adicionarMidia(new Musica(titulo, tamanho, anoLancamento, autorDiretorArtista));
