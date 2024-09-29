@@ -104,29 +104,49 @@ public class Main {
                     biblioteca.listarMidias();
                     break;
 
-                case 3:
+                case 3: // ja ta ficando o chato o tanto de bug 
                     System.out.print("Digite o título da mídia que deseja reproduzir: ");
                     String tituloMidia = scanner.nextLine();
                     Midia midia = biblioteca.getMidia(tituloMidia);
 
                     if (midia != null) {
-                        try {
-                            midia.iniciar();
-                            if (midia instanceof Controle) {
-                                Controle controle = (Controle) midia;
+                        // se eh livro eu nem continuo
+                        if (midia instanceof Livro) {
+                            System.out.println("Não é possível reproduzir livros.");
+                        } else {
+                            try {
+                                midia.iniciar(); //inicio
+                                if (midia instanceof Controle) {
+                                    Controle controle = (Controle) midia; // olho se é controlavel
+                                    boolean reproduzindo = true; 
 
-                                System.out.println(
-                                        "Deseja pausar (p) ou parar (s) a mídia? (qualquer tecla para continuar)");
-                                String aux = scanner.nextLine();
+                                    while (reproduzindo) { // loop para reproduzir 
+                                        System.out.println(
+                                                "Deseja pausar (p) ou parar (s) a mídia? (qualquer tecla para continuar)"); // pausa do contole
+                                        String aux = scanner.nextLine();
 
-                                if (aux.equals("p")) {
-                                    controle.pausar();
-                                } else if (aux.equals("s")) {
-                                    controle.parar();
+                                        if (aux.equals("p")) { 
+                                            controle.pausar();
+                                            System.out.println("Mídia pausada.");
+                                            // Simula a pausa com um tempo de espera
+                                            try {
+                                                Thread.sleep(3000); // tempo so pra testar
+                                            } catch (InterruptedException e) {
+                                                Thread.currentThread().interrupt(); // Restaura o status de interrupção
+                                                System.out.println("A pausa foi interrompida.");
+                                            }
+                                        } else if (aux.equals("s")) {
+                                            controle.parar(); // chama parar aqui
+                                            reproduzindo = false; // Para a reprodução
+                                            System.out.println("Mídia parada.");
+                                        }
+                                            
+                                        
+                                    }
                                 }
+                            } catch (MsgException e) {
+                                System.out.println(e.getMessage());
                             }
-                        } catch (MsgException e) {
-                            System.out.println(e.getMessage());
                         }
                     } else {
                         System.out.println("Mídia não encontrada!");
