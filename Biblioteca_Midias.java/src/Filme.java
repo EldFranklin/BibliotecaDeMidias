@@ -25,9 +25,9 @@ public class Filme extends Midia implements Controle {
     }
 
     // Implementação de iniciar, com lançamento
-    @Override
+    
     public void iniciar() throws MsgException {
-        System.out.println("Iniciando filme: " + titulo);
+        /*System.out.println("Iniciando filme: " + titulo);
         isPlaying = true;
         // Aqui eu se eu quiser implementar a reprpdução, vou ter que usar threads para poder reproduzir e pausar/parar a midia 
         // tendei usando só o sleep, mas n consegui fazer pausar/parar
@@ -55,7 +55,7 @@ public class Filme extends Midia implements Controle {
                 isPlaying = false;
             }
         }).start();
-    }
+    */}
 
     @Override
     public void pausar() throws MsgException {

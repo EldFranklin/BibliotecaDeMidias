@@ -1,3 +1,4 @@
 The name of the wind;600;2007;Livro;Patrick Rothfuss
-Papercut;3;2007;Musica;Linkn Park
 Interestelar;180;2011;Filme;Cristofer noolan
+Papermoon;5;2010;Musica;N sei
+Carry on my wayward son;5;1970;Musica;Kansas

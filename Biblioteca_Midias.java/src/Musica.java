@@ -25,9 +25,9 @@ public class Musica extends Midia implements Controle {
     }
 
    
-    @Override
+   //como ajuste rapido incrementei a logica de preodução mas todas as midias, ainda to testando
     public void iniciar() throws MsgException {
-        System.out.println("Reproduzindo música: " + this.getTitulo());
+        /*System.out.println("Reproduzindo música: " + this.getTitulo());
         isPlaying = true;
 
         
@@ -54,7 +54,7 @@ public class Musica extends Midia implements Controle {
                 isPlaying = false;
             }
         }).start();
-    }
+    }*/}
 
     @Override
     public void pausar() throws MsgException {
